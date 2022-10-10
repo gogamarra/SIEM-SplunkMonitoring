@@ -35,13 +35,14 @@ The following attacks and challenges are in play:
 - Report: Identify Critical Vulnerabilities in the database server
 - Create Alert Notification
  
-## Install Monitoring Features
+## Install SIEM Monitoring Features
 - Install the Splunk App, **Network Toolkit**, on Splunk ES.
 - Restart Splunk to finalize install
 - Continue Analysis as **sysadmin**
 - Configure search index storage locations
 
-### Install **Network Toolkit**
+### Results
+- Install **Network Toolkit**
 
 ![InstallNetworkToolkit](./images/1-01-BrowseInstallNetworkToolkit.jpg)
 
