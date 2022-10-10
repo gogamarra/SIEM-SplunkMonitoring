@@ -38,6 +38,10 @@ The following attacks and challenges ocurring:
 - Install the Splunk App, **Network Toolkit**, on Splunk ES.
 
 ![InstallNetworkToolkit](./images/1-01-BrowseInstallNetworkToolkit.jpg)
+![Restart](./images/1-02-RestartRequired.jpg)
+![Restarting](./images/1-03-Restarting.jpg)
+![AdminLogin](./images/1-04-SplunkAdminLogin.jpg)
+![ConfigIndex](./images/1-05-ConfigLocationSearchIndex.jpg)
 
 ## 
 - Ping Vandalay's web servers, **198.153.194.1** and **198.153.194.2**. Provide Results
