@@ -59,7 +59,10 @@ The following attacks and challenges are in play:
 
 ![ConfigIndex](./images/1-05-ConfigLocationSearchIndex.jpg)
 
-## Monitor Web Servers
+## Monitoring Web Servers
+- Confirm Availability of web servers through a ping
+- Run a current speed test
+
 - Confirm web servers are available for monitoring by executing ping of Vandalay's web servers, **198.153.194.1** and **198.153.194.2**. 
 
 ![PingWebServer1](./images/1-06-Ping1.jpg)
