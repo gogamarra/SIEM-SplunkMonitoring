@@ -88,16 +88,20 @@ Use Splunk Processing Language (SPL) to:
 - Conclude: 1) approximate date/time of attack, 2) How long did it take systems to recover?
 
 ### Results
-- Upload Log Data
+- **Upload Log Data**
 
 ![AddData1](./images/2-01-AddData1.jpg)
 ![AddData2](./images/2-02-AddData2.jpg)
 
-- Use Splunk SPL to create a virtual field of ratio between upload/download speeds
+
+- **Use Splunk SPL to create a virtual field of ratio between upload/download speeds**
+
 
 ![CreateRatio](./images/2-04-CreateRatio.jpg)
 
-- Create a Report using the TABLE SPL command to display: time, ip_address, downloaded megabits, uploaded megabits, upload/download ratio
+
+- **Create a Report using the TABLE SPL command to display: time, ip_address, downloaded megabits, uploaded megabits, upload/download ratio**
+
 
 ![TableReport](./images/2-05-TableReport.jpg)
 
