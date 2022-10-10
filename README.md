@@ -31,8 +31,8 @@ The following attacks and challenges are in play:
 ## Outline of Deliverables
 - Install SIEM Monitoring Features
 - Monitor Web Servers
-- Report: Determine Impact on Speed and Ratio of upload/download
-- Report: Identify Critical Vulnerabilities in the database server
+- Report: Impact on Speed and Ratio of upload/download
+- Report: Critical Vulnerabilities Scan
 - Create Alert Notification
  
 ## Install SIEM Monitoring Features
@@ -65,9 +65,19 @@ The following attacks and challenges are in play:
 
 - Confirm web servers are available for monitoring by executing ping of Vandalay's web servers, **198.153.194.1** and **198.153.194.2**. 
 
+### Results
+- Ping web servers
+
 ![PingWebServer1](./images/1-06-Ping1.jpg)
 ![PingWebServer2](./images/1-07-Ping2.jpg)
 
+- Packet loss check
+
+![PacketLossCheck](./images/1-08-PacketLoss.jpg)
+
 - Run a current speed test on server 2
 
-![SpeedTestWebServer2](./images/1-08-Speed2.jpg)
+![SpeedTestWebServer2](./images/1-09-Speed2.jpg)
+
+## Report: Speed and Ratio of upload/download
+-
