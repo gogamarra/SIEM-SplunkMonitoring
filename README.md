@@ -30,7 +30,7 @@ The following attacks and challenges are in play:
 
 ## Outline of Deliverables
 - Install SIEM Monitoring Features
-- Monitor Web Servers
+- Monitor Web Servers (ping, packet loss, speed)
 - Report: Impact on Speed and Ratio of upload/download
 - Report: Critical Vulnerabilities Scan
 - Create Alert Notification
@@ -60,18 +60,17 @@ The following attacks and challenges are in play:
 ![ConfigIndex](./images/1-05-ConfigLocationSearchIndex.jpg)
 
 ## Monitoring Web Servers
-- Confirm Availability of web servers through a ping
+- Confirm server availability through a ping
+- Run a packet loss check
 - Run a current speed test
 
-- Confirm web servers are available for monitoring by executing ping of Vandalay's web servers, **198.153.194.1** and **198.153.194.2**. 
-
 ### Results
-- Ping web servers
+- Confirm web servers are available for monitoring by executing ping of Vandalay's web servers, **198.153.194.1** and **198.153.194.2**. 
 
 ![PingWebServer1](./images/1-06-Ping1.jpg)
 ![PingWebServer2](./images/1-07-Ping2.jpg)
 
-- Packet loss check
+- Run a packet loss check on the web servers
 
 ![PacketLossCheck](./images/1-08-PacketLoss.jpg)
 
@@ -79,5 +78,11 @@ The following attacks and challenges are in play:
 
 ![SpeedTestWebServer2](./images/1-09-Speed2.jpg)
 
-## Report: Speed and Ratio of upload/download
--
+## Analyze Log Data From DDOS Attack
+- Upload Log Data to SIEM
+- Use Splunk Processing Language to:
+-- Create a virtual field showing ratio of upload:download speed.
+-- Create a Splunk report showing statistics for: time, ip_address, downloaded megabits, uploaded megabits, upload/download ration.
+- Conclude: 1) approximate date/time of attack, 2) How long did it take systems to recover?
+
+
