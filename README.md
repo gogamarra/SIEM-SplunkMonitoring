@@ -17,26 +17,27 @@
 
 Splunk Enterprise Security (ES) is a Security Information and Event Management (SIEM) tool based on the Splunk data platform, a big data software solution that also provides many solutions outside cybersecurity. Splunk ES specializes in assisting with the key defensive concepts of continous monitoring, log collection, aggregation, parsing, normalization, searching and correlation. 
 
-Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add to their Splunk base product that have custom searches and features, with their own interface.  These differ from <ins>Splunk Apps</ins>, which are smaller components that provide additional functionality without their own interface.
+Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add to their Splunk base product that have custom searches and features, with their own interface.  These differ from <ins>Splunk Addons</ins>, which are smaller components that provide additional functionality without their own interface.
 
 ## Attack Scenario
-- For the purposes of this project, I presume to be a new SOC Analyst for a company, Vandalay Industries. Vandalay uses Splunk ES as their SIEM.  The following attacks and challenges ocurring:
+For the purposes of this project, I presume to be a new SOC Analyst for a company, Vandalay Industries. Vandalay uses Splunk ES as their SIEM.  
 
+The following attacks and challenges ocurring:
 - Web server outage due to a DDOS attack
 - Upload/Download speed have been significantly impacted
 - Brute force attacks against administrator accounts
 - Management suspects the database servers might be vulnerable and are in need of an assessment.
 
-## Outline of Deliverables
-- Install monitoring features on SIEM
+## Outline of SIEM Deliverables
+- Install monitoring features
 - Report To Determine Impact on Download/Upload Speed and Ratio of upload/download
 - Report: Identify Critical Vulnerabilities in the database server.
 - Create Alert Notification
  
-## Install Monitoring Features On SIEM
+## Install Monitoring Features
 - Install the Splunk App, **Network Toolkit**, on Splunk ES.
 
-![ Deployment Architecture](./images/network-diagram-elkstack.jpg)
+![InstallNetworkToolkit](./images/1-01-BrowseInstallNetworkToolkit.jpg)
 
 ## 
 - Ping Vandalay's web servers, **198.153.194.1** and **198.153.194.2**. Provide Results
@@ -79,6 +80,3 @@ The following images display the actual results after running `DOCKER-ANSIBLE` P
 ### DASHBOARDS Working and Receiving Data
 
 ![filebeat System Overview](./images/dashboard-filebeat-system.jpg)
-![Metricbeat System Overview](./images/dashboard-metricbeat-system.jpg)
-![Metricbeat Host Overview](./images/dashboard-metricbeat-host.jpg)
-![Metricbeat Container Overview](./images/dashboard-metricbeat-containers.jpg)
