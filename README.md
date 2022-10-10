@@ -84,7 +84,7 @@ The following attacks and challenges are in play:
 
 Use Splunk Processing Language (SPL) to:
 - Create a virtual field showing ratio of upload:download speed.
-- Create a Splunk report showing statistics for: time, ip_address, downloaded megabits, uploaded megabits, upload/download ration.
+- Create a Splunk report showing statistics for: time, ip_address, downloaded megabits, uploaded megabits, upload/download ratio.
 - Conclude: 1) approximate date/time of attack, 2) How long did it take systems to recover?
 
 ### Results
@@ -97,6 +97,10 @@ Use Splunk Processing Language (SPL) to:
 - Use Splunk SPL to create a virtual field of ratio between upload/download speeds
 
 ![CreateRatio](./images/2-04-CreateRatio.jpg)
+
+- Create a Report using the TABLE SPL command to display: time, ip_address, downloaded megabits, uploaded megabits, upload/download ratio
+
+![TableReport](./images/2-05-TableReport.jpg)
 
 ### Log Conclusions
 - The DDoS attack started at:  14:30 on 23-Feb-2020
