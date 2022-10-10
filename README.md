@@ -94,7 +94,7 @@ Use Splunk Processing Language (SPL) to:
 ![AddData2](./images/2-02-AddData2.jpg)
 
 
-- >>> **Use Splunk SPL to create a virtual field of ratio between upload/download speeds**
+- ///// **Use Splunk SPL to create a virtual field of ratio between upload/download speeds**
 
 
 ![CreateRatio](./images/2-04-CreateRatio.jpg)
