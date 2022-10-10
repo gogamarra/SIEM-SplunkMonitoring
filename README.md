@@ -79,11 +79,27 @@ The following attacks and challenges are in play:
 ![SpeedTestWebServer2](./images/1-09-Speed2.jpg)
 
 ## Analyze Log Data From DDOS Attack
-- Upload Log Data to SIEM
+- Add Log Data to SIEM
 
-Use Splunk Processing Language to:
+
+Use Splunk Processing Language (SPL) to:
 - Create a virtual field showing ratio of upload:download speed.
 - Create a Splunk report showing statistics for: time, ip_address, downloaded megabits, uploaded megabits, upload/download ration.
 - Conclude: 1) approximate date/time of attack, 2) How long did it take systems to recover?
 
+### Results
+- Upload Log Data
 
+![AddData1](./images/2-01-AddData1.jpg)
+![AddData2](./images/2-02-AddData1.jpg)
+![AddData3](./images/2-03-AddData1.jpg)
+
+- Use Splunk SPL to create a virtual field of ratio between upload/download speeds
+
+![CreateRatio](./images/2-04-CreateRatio.jpg)
+
+### Log Conclusions
+- The DDoS attack started at:  14:30 on 23-Feb-2020
+- The DDoS attack ended at: 23:30 on 23-Feb-2020
+- The attack lasted approximately 9 hours by which time speeds had recovered.
+- A symptom of a DDoS attack is decrease in internet speed due to over-usage of bandwidth to complete the attack.
