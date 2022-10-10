@@ -91,8 +91,8 @@ Use Splunk Processing Language (SPL) to:
 - Upload Log Data
 
 ![AddData1](./images/2-01-AddData1.jpg)
-![AddData2](./images/2-02-AddData1.jpg)
-![AddData3](./images/2-03-AddData1.jpg)
+![AddData2](./images/2-02-AddData2.jpg)
+![AddData3](./images/2-03-AddData3.jpg)
 
 - Use Splunk SPL to create a virtual field of ratio between upload/download speeds
 
