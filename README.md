@@ -22,14 +22,15 @@ Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add 
 ## Attack Scenario
 For the purposes of this project, I presume to be a new SOC Analyst for a company, Vandalay Industries. Vandalay uses Splunk ES as their SIEM.  
 
-The following attacks and challenges ocurring:
+The following attacks and challenges are in play:
 - Web server outage due to a DDOS attack
 - Upload/Download speed have been significantly impacted
 - Brute force attacks against administrator accounts
 - Management suspects the database servers might be vulnerable and are in need of an assessment.
 
-## Outline of SIEM Deliverables
-- Install monitoring features
+## Outline of Deliverables
+- Install monitoring features on Splunk ES
+- Monitor web servers
 - Report To Determine Impact on Download/Upload Speed and Ratio of upload/download
 - Report: Identify Critical Vulnerabilities in the database server.
 - Create Alert Notification
@@ -52,44 +53,12 @@ The following attacks and challenges ocurring:
 
 ![ConfigIndex](./images/1-05-ConfigLocationSearchIndex.jpg)
 
-## 
-- Ping Vandalay's web servers, **198.153.194.1** and **198.153.194.2**. Provide Results
-- Run a speed test and provide results
+## Monitor Web Servers
+- Confirm web servers are available for monitoring by executing ping of Vandalay's web servers, **198.153.194.1** and **198.153.194.2**. 
 
+![PingWebServer1](./images/1-06-Ping1.jpg)
+![PingWebServer2](./images/1-07-Ping2.jpg)
 
+- Run a current speed test on server 2
 
-
-![ Deployment Architecture](./images/network-diagram-elkstack.jpg)
-
-## Playbooks, Configuration Files
-Ansible files, known as **PLAYBOOKS**, 
-
-- ![ANSIBLE Playbook Files](./files/playbook)
-
-## Description of the Topology
-
-The main purpose of this network is to host a load balanced and monitored instance of DVWA (D*mn 
-
-(The public IP addresses will vary by deployment effort.)
-
-|         Name         | Function  | Load Balancer | Private IP |    Public IP   |  Operating System  |
-|----------------------|-----------|---------------|------------|----------------|--------------------|
-| Jump-Box-Provisioner | Gateway   |      No       |  10.0.0.4  | 52.247.211.204 | Linux-Ubuntu 18.04 |
-| DVWA-VM1             | Webserver |      Yes      |  10.0.0.5  | 52.191.166.158 | Linux-Ubuntu 18.04 |
-| DVWA-VM2             | Webserver |      Yes      |  10.0.0.6  | 52.191.166.158 | Linux-Ubuntu 18.04 |
-| ELK-Stack            | ELKserver |      No       |  10.0.0.7  | 52.183.78.79   | Linux-Ubuntu 18.04 |
-
-### BEATS in Use
-I have installed the following ELASTIC "Beats" lightweight shippers on the monitored machines to facilitate collection and transmission of data to the ELK Stack:
-- **Filebeat**
-
-These Beats allow collecting the following information from the web servers.:
-- **Filebeat collects file system logs**
-
-## SCREENSHOTS - Successful Build and Dashboard Confirmation
-The following images display the actual results after running `DOCKER-ANSIBLE` PLAYBOOKS.  
-- The ELK stack server was deployed.
-
-### DASHBOARDS Working and Receiving Data
-
-![filebeat System Overview](./images/dashboard-filebeat-system.jpg)
+![SpeedTestWebServer2](./images/1-08-Speed2.jpg)
