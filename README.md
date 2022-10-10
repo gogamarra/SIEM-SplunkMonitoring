@@ -80,6 +80,7 @@ The following attacks and challenges are in play:
 
 ## Analyze Log Data From DDOS Attack
 - Upload Log Data to SIEM
+
 Use Splunk Processing Language to:
 - Create a virtual field showing ratio of upload:download speed.
 - Create a Splunk report showing statistics for: time, ip_address, downloaded megabits, uploaded megabits, upload/download ration.
