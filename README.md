@@ -29,18 +29,23 @@ The following attacks and challenges are in play:
 - Management suspects the database servers might be vulnerable and are in need of an assessment.
 
 ## Outline of Deliverables
-- Install monitoring features on Splunk ES
-- Monitor web servers
-- Report To Determine Impact on Download/Upload Speed and Ratio of upload/download
-- Report: Identify Critical Vulnerabilities in the database server.
+- Install SIEM Monitoring Features
+- Monitor Web Servers
+- Report: Determine Impact on Speed and Ratio of upload/download
+- Report: Identify Critical Vulnerabilities in the database server
 - Create Alert Notification
  
 ## Install Monitoring Features
 - Install the Splunk App, **Network Toolkit**, on Splunk ES.
+- Restart Splunk to finalize install
+- Continue Analysis as **sysadmin**
+- Configure search index storage locations
+
+### Install **Network Toolkit**
 
 ![InstallNetworkToolkit](./images/1-01-BrowseInstallNetworkToolkit.jpg)
 
-- Restart Splunk to finalize install
+- Restart and finalize install
 
 ![Restart](./images/1-02-RestartRequired.jpg)
 ![Restarting](./images/1-03-Restarting.jpg)
