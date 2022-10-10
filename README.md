@@ -36,10 +36,20 @@ The following attacks and challenges ocurring:
  
 ## Install Monitoring Features
 - Install the Splunk App, **Network Toolkit**, on Splunk ES.
+
 ![InstallNetworkToolkit](./images/1-01-BrowseInstallNetworkToolkit.jpg)
+
+- Restart Splunk to finalize install
+
 ![Restart](./images/1-02-RestartRequired.jpg)
 ![Restarting](./images/1-03-Restarting.jpg)
+
+- Login as Admin to continue analysis
+
 ![AdminLogin](./images/1-04-SplunkAdminLogin.jpg)
+
+- Configure where the index for searches will be stored.
+
 ![ConfigIndex](./images/1-05-ConfigLocationSearchIndex.jpg)
 
 ## 
