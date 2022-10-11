@@ -84,7 +84,7 @@ The following attacks and challenges are in play:
 
 ![SpeedTestWebServer2](./images/1-09-Speed2.jpg)
 
-## Analyze/Conclude <ins>SPEED TEST</ins> Log From DDOS Attack
+## Analyze/Conclude On <ins>SPEED TEST</ins> Log Data From DDOS Attack
 - Add Speed Test Log Data to SIEM
 Use Splunk Processing Language (SPL) to:
 - Create a virtual field showing ratio of upload:download speed.
@@ -111,7 +111,7 @@ Use Splunk Processing Language (SPL) to:
 - The attack lasted approximately 9 hours by which time speeds had recovered.
 - A symptom of a DDoS attack is decrease in internet speed due to over-usage of bandwidth to complete the attack.
 
-## Determine Data Server Vulnerability
+## Analyze/Conclude On Vulnerability Of Data Server
 - Upload Nessus Scan Results
 - Create a Splunk report to determine how many critical vulnerabilities exist on the customer data server
 
@@ -125,7 +125,7 @@ Use Splunk Processing Language (SPL) to:
 
 ![CountReport](./images/3-02-CountReport.jpg)
 
-## Build an alert to monitor the data server
+## Create Vulnerability Alert Notification For Data Server
 - Create an email alert that monitors every day to see if this server has any critical vulnerabilities. If a vulnerability exists, have an alert emailed to soc@vandalay.com
 
 ### Results
@@ -143,7 +143,7 @@ To: soc@vandalay.com, Priority: Highest, Include Link, Trigger Time, PDF
 ![CountAlert3](./images/3-05-CountAlert3.jpg)
 ![CountAlert4](./images/3-06-CountAlert4.jpg)
 
-## Analyze Administrator Logs For a BRUTE FORCE Attack
+## Analyze/Conclude On <ins>Admin</ins> Log Data From Brute Force Attack
 - Analyze administrator logs that document a brute force attack. Then, create a baseline of the ordinary amount of administrator bad logins and determine a threshold to indicate if a brute force attack is occurring.
 
 ### Results
@@ -160,7 +160,7 @@ To: soc@vandalay.com, Priority: Highest, Include Link, Trigger Time, PDF
 - The baseline of normal activity is between 0 and 23 events per hour based on the timeframe history of the logged events, which is approximately 35 hours.
 - The minimum brute-force activity for this incident was 34 events per hour.  This leaves a gap of 23-33 events that could be either normal activity or malicious in future activity.  A hacker could potentially use “rates of events” in the gap window to mask themselves from detection.  Given that both future normal and malicious activity could have an unknown statistical deviation +/-, the alert threshold should be set to 28, the midpoint of the gap window.  If we could obtain more historical files to determine what is “normal”, the threshold could be revised.  
 
-- //////// **Create and email alert to check threshold hourly** ////////
+- //////// **Create Brute Force Attack Alert Notification** ////////
 
 Creating SPL
 Researching Splunk Documentation, there is an “earliest” command that filters based on the default _time field to retrieve a specific range of records based on parameter set
