@@ -53,15 +53,15 @@ The following attacks and challenges are in play:
 - Configure search index storage locations
 
 ### Results
-- //////// **Install "Network Toolkit" app** ////////
+////////// **Install "Network Toolkit" app** //////////
 
 ![InstallNetworkToolkit](./images/1-01-BrowseInstallNetworkToolkit.jpg)
 
-- //////// **Login as Admin to continue analysis** ////////
+////////// **Login as Admin to continue analysis** //////////
 
 ![AdminLogin](./images/1-04-SplunkAdminLogin.jpg)
 
-- //////// **Configure where the index for searches will be stored** ////////
+////////// **Configure where the index for searches will be stored** //////////
 
 ![ConfigIndex](./images/1-05-ConfigLocationSearchIndex.jpg)
 
@@ -71,16 +71,16 @@ The following attacks and challenges are in play:
 - Run a current speed test
 
 ### Results
-- //////// **Confirm web servers availability by pinging 198.153.194.1 and 198.153.194.2** //////// 
+////////// **Confirm web servers availability by pinging 198.153.194.1 and 198.153.194.2** ////////// 
 
 ![PingWebServer1](./images/1-06-Ping1.jpg)
 ![PingWebServer2](./images/1-07-Ping2.jpg)
 
-- //////// **Run a packet loss check on the web servers** ////////
+////////// **Run a packet loss check on the web servers** //////////
 
 ![PacketLossCheck](./images/1-08-PacketLoss.jpg)
 
-- //////// **Run a current speed test on server 2** ////////
+////////// **Run a current speed test on server 2** //////////
 
 ![SpeedTestWebServer2](./images/1-09-Speed2.jpg)
 
@@ -92,20 +92,20 @@ Use Splunk Processing Language (SPL) to:
 - Conclude: 1) approximate date/time of attack, 2) How long did it take systems to recover?
 
 ### Results
-- //////// **Upload Log Data** ////////
+////////// **Upload Log Data** //////////
 
 ![AddData1](./images/2-01-AddData1.jpg)
 ![AddData2](./images/2-02-AddData2.jpg)
 
-- //////// **Use Splunk SPL to create a virtual field of ratio between upload/download speeds** ////////
+////////// **Use Splunk SPL to create a virtual field of ratio between upload/download speeds** //////////
 
 ![CreateRatio](./images/2-04-CreateRatio.jpg)
 
-- //////// **Create a report using the TABLE SPL command to display: time, ip_address, downloaded megabits, uploaded megabits, upload/download ratio** ////////
+////////// **Create a report using the TABLE SPL command to display: time, ip_address, downloaded megabits, uploaded megabits, upload/download ratio** //////////
 
 ![TableReport](./images/2-05-TableReport.jpg)
 
-//////// **Log Conclusions** ////////
+////////// **Log Conclusions** //////////
 - The DDoS attack started at:  14:30 on 23-Feb-2020
 - The DDoS attack ended at: 23:30 on 23-Feb-2020
 - The attack lasted approximately 9 hours by which time speeds had recovered.
@@ -117,11 +117,11 @@ Use Splunk Processing Language (SPL) to:
 
 ### Results
 
-- //////// **Upload Nessus Vulnerability Scan results** ////////
+////////// **Upload Nessus Vulnerability Scan results** //////////
 
 ![NessusUpload](./images/3-01-NessusUpload.jpg)
 
-- //////// **Create a report counting data server vulnerabilities** ////////
+////////// **Create a report counting data server vulnerabilities** //////////
 
 ![CountReport](./images/3-02-CountReport.jpg)
 
@@ -130,14 +130,16 @@ Use Splunk Processing Language (SPL) to:
 
 ### Results
 
-- //////// **Create and email alert for the data server** ////////
+////////// **Create and email alert for the data server** //////////
 
 ![CountAlert1](./images/3-03-CountAlert1.jpg)
 
 Complete the following fields in the resulting SAVE AS ALERT window and press SAVE.  Set:
-Title: Critical Vulnerability Detected - 10.11.36.23 ; Description: Customer Database Server ; Alert Type: Run Every Day ; Trigger Alert When: IS GREATER THAN 0
-SELECT Trigger Action/Add Actions: Send EMAIL
-To: soc@vandalay.com, Priority: Highest, Include Link, Trigger Time, PDF
+- Title: Critical Vulnerability Detected - 10.11.36.23
+- Description: Customer Database Server
+- Alert Type: Run Every Day
+- Trigger Alert When: IS GREATER THAN 0 SELECT Trigger Action/Add
+- Actions: Send EMAIL To: soc@vandalay.com, Priority: Highest, Include Link, Trigger Time, PDF
 
 ![CountAlert2](./images/3-04-CountAlert2.jpg)
 ![CountAlert3](./images/3-05-CountAlert3.jpg)
@@ -147,45 +149,53 @@ To: soc@vandalay.com, Priority: Highest, Include Link, Trigger Time, PDF
 - Analyze administrator logs that document a brute force attack. Then, create a baseline of the ordinary amount of administrator bad logins and determine a threshold to indicate if a brute force attack is occurring.
 
 ### Results
-- //////// **Upload admin logs** ////////
+////////// **Upload admin logs** //////////
 
 ![LoadAdminLog](./images/4-01-LoadAdminLog.jpg)
 
-- //////// **Identify Time of Brute Force** ////////
+////////// **Identify Time of Brute Force** //////////
 
 ![BruteTime](./images/4-02-BruteTime.jpg)
 
-- //////// **Determine a baseline of normal activity** ////////
+////////// **Determine a baseline of normal activity** //////////
 
-- The baseline of normal activity is between 0 and 23 events per hour based on the timeframe history of the logged events, which is approximately 35 hours.
-- The minimum brute-force activity for this incident was 34 events per hour.  This leaves a gap of 23-33 events that could be either normal activity or malicious in future activity.  A hacker could potentially use “rates of events” in the gap window to mask themselves from detection.  Given that both future normal and malicious activity could have an unknown statistical deviation +/-, the alert threshold should be set to 28, the midpoint of the gap window.  If we could obtain more historical files to determine what is “normal”, the threshold could be revised.  
+The baseline of normal activity is between 0 and 23 events per hour based on the timeframe history of the logged events, which is approximately 35 hours.
 
-- //////// **Create Brute Force Attack Alert Notification** ////////
+The minimum brute-force activity for this incident was 34 events per hour.  This leaves a gap of 23-33 events that could be either normal activity or malicious in future activity.  A hacker could potentially use “rates of events” in the gap window to mask themselves from detection.  Given that both future normal and malicious activity could have an unknown statistical deviation +/-, the alert threshold should be set to 28, the midpoint of the gap window.  If we could obtain more historical files to determine what is “normal”, the threshold could be revised.  
 
-Creating SPL
-Researching Splunk Documentation, there is an “earliest” command that filters based on the default _time field to retrieve a specific range of records based on parameter set
-In this case, we want to search for records whose timestamp is within the last 60 minutes and status = “An account failed to login.
-Based on the following print screens, enter search SPL as follows with earliest=-60m which commands to only search for records generated in the last hour.:
-source="administrator_logs.csv" host="gamarra" sourcetype="csv" name="An account failed to log on" earliest=-60m | table name _time src_ip
- As a test, I ran the report with the earliest command set to detect records in the uploaded logs.  The test setting would be “earliest= - 213120”.  Results were returned thus confirming validity of command.
+////////// **Create Brute Force Attack Alert Notification** //////////
+
+Within SPL, there is an **“EARLIEST”** command that filters based on the default _time field to retrieve a specific range of records based on parameter set.
+
+The ALERT will be based on an <ins>hourly</ins> check.
+
+Therefore, I want to search for records whose timestamp is within the last 60 minutes and status = **“An account failed to login"**.
+
+Based on the following print screens, enter search SPL as follows with earliest=-60m which commands to only search for records generated in the last hour:
+
+- **source="administrator_logs.csv" host="gamarra" sourcetype="csv" name="An account failed to log on" earliest=-60m | table name _time src_ip**
+
+ As a <ins>preliminary test</ins>, I ran the report with the earliest command set to detect records in the uploaded logs.  The test setting would be “earliest= - 213120”.  Results were returned thus confirming validity of the **“EARLIEST”** command.
 
 ![AlertBrute1](./images/4-03-CreateAlertBrute1.jpg)
 ![AlertBrute2](./images/4-04-CreateAlertBrute2.jpg)
 
-Set  earliest=-60m for production level alert.
+- For the alert to go into production, set **earliest=-60m**
+
 ![AlertBrute3](./images/4-05-CreateAlertBrute3.jpg)
  
-Creating Hourly Alert
-On the search window, click SAVE AS and select ALERT.  Complete as follows
-Title:  Hourly Attack Check
-Description: Check for DDOS attach by failed login attempts”
-Alert Type:  Scheduled EVERY HOUR
-Trigger alert when:  Number of results is Greater than 24
-Add Action : select SEND EMAIL
-To: soc@vandalay.com
-Priority: highest
-Click SAVE
-Screenshots as follows:
+- Configuring an Hourly Alert in Splunk
+In the search window, click SAVE AS and select ALERT.  Complete as follows:
+
+- Title:  Hourly Attack Check
+- Description: Check for DDOS attach by failed login attempts”
+- Alert Type:  Scheduled EVERY HOUR
+- Trigger alert when:  Number of results is Greater than 24
+- Add Action : select SEND EMAIL
+- To: soc@vandalay.com
+- Priority: highest
+- Click SAVE
+- Screenshots as follows:
 
 ![AlertBrute4](./images/4-06-CreateAlertBrute4.jpg)
 ![AlertBrute5](./images/4-07-CreateAlertBrute5.jpg)
