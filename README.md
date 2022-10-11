@@ -20,6 +20,8 @@ Splunk Enterprise Security (ES) is a Security Information and Event Management (
 
 Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add to their Splunk base product that have custom searches and features, with their own interface.  These differ from <ins>Splunk Add-ons</ins>, which are smaller components that provide additional functionality without their own interface.
 
+Splunk Processing Language (SPL) is similar to SQL except that Splunk SPL is designed to search events rather than database table columns. ![Splunk SPL for SQL users](https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SQLtoSplunk)
+
 ## Attack Scenario
 For the purposes of this project, I presume to be a new SOC Analyst for a company, Vandalay Industries. Vandalay uses Splunk ES as their SIEM.  
 
@@ -32,10 +34,12 @@ The following attacks and challenges are in play:
 ## Outline of Deliverables
 - Install SIEM Monitoring Features
 - Monitor Web Servers (ping, packet loss, speed)
-- Load and Analyze Log Data
-- Report: Impact on Speed and Ratio of upload/download
-- Report: Critical Vulnerabilities Scan
-- Create Alert Notification
+- Analyze and Conclude On "Speed Test" Log Data from DDOS Attack
+- Create DDOS Attack Alert Notification
+- Analyze/Conclude On Vulnerability of Data Server
+- Create Vulnerability Alert Notification
+- Analyze/Conclude On "Admin" Log Data For Brute Force Attack
+- Create Brute Force Attack Alert Notification
  
 ## Install SIEM Monitoring Features
 - Install the Splunk App, **Network Toolkit**, on Splunk ES.
@@ -74,7 +78,7 @@ The following attacks and challenges are in play:
 
 ![SpeedTestWebServer2](./images/1-09-Speed2.jpg)
 
-## Load and Analyze <ins>SPEED TEST</ins> Log From DDOS Attack
+## Analyze <ins>SPEED TEST</ins> Log From DDOS Attack
 - Add Speed Test Log Data to SIEM
 Use Splunk Processing Language (SPL) to:
 - Create a virtual field showing ratio of upload:download speed.
