@@ -1,5 +1,8 @@
 # SIEM - Design A Splunk Monitoring Solution 
 
+## Objective
+Demonstrate my ability to design a powerful Splunk Enterprise Security SIEM monitoring solution to protect a customer from security attacks.
+
 ## Project Outline
 - Introduction
 - Attack Scenario
@@ -7,9 +10,6 @@
 - Tasks and Results Documentation
 
 ## Introduction
-
-<ins>OBJECTIVE</ins>: Demonstrate my ability to design a powerful Splunk Enterprise Security monitoring solution to protect a customer from security attacks.
-
 <ins>My Skills and Knowledge Applied</ins> 
 - Searching for Splunk apps
 - Installing a Splunk app
@@ -20,13 +20,18 @@
 - Creating custom reports
 - Creating custom alerts
 
+### Background Of Technologies Used
 <ins>What is Splunk ES?</ins>
 
 Splunk Enterprise Security (ES) is a Security Information and Event Management (SIEM) tool based on the Splunk data platform, a big data software solution that also provides many solutions outside cybersecurity. Splunk ES specializes in assisting with the key defensive concepts of continuous monitoring, log collection, aggregation, parsing, normalization, searching and correlation. 
 
 Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add to their Splunk base product. Apps have custom searches and features with their own interface.  These differ from <ins>Splunk Add-ons</ins>, which are smaller components that provide additional functionality without their own interface.
 
-Splunk Processing Language (SPL) is similar to SQL except that Splunk SPL is designed to search events rather than database table columns. (https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SQLtoSplunk)
+Splunk Processing Language (SPL) is similar to SQL except that Splunk SPL is designed to search events rather than database table columns. SPL is used to aggregate, parse, normalize and search through log data. (https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SQLtoSplunk)
+
+<ins>What is Nessus?</ins>
+
+"Nessus is one of the many vulnerability scanners used during vulnerability assessments and penetration testing engagements, including malicious attacks." (Lester Obbayi, Infosec Institute, 7/26/19) https://resources.infosecinstitute.com/topic/a-brief-introduction-to-the-nessus-vulnerability-scanner/
 
 ## Attack Scenario
 <ins>Assumption</ins>: I am new SOC Analyst for a company, Vandalay Industries, which has Splunk ES as their SIEM.
@@ -91,6 +96,8 @@ Use Splunk Processing Language (SPL) to:
 - Create a Splunk report showing statistics for: time, ip_address, downloaded megabits, uploaded megabits, upload/download ratio.
 - Conclude: 1) approximate date/time of attack, 2) How long did it take systems to recover?
 
+![Server Speed Test Log](./logs/server_speedtest.csv)
+
 ### Results
 ////////// **Upload Log Data** //////////
 
@@ -114,6 +121,8 @@ Use Splunk Processing Language (SPL) to:
 ## Analyze/Conclude On Vulnerability Of Data Server
 - Upload Nessus Scan Results
 - Create a Splunk report to determine how many critical vulnerabilities exist on the customer data server
+
+![Nessus Log](./logs/nessus_logs.csv)
 
 ### Results
 
@@ -147,6 +156,8 @@ Complete the following fields in the resulting SAVE AS ALERT window and press SA
 
 ## Analyze/Conclude On <ins>Admin</ins> Log Data From Brute Force Attack
 - Analyze administrator logs that document a brute force attack. Then, create a baseline of the ordinary amount of administrator bad logins and determine a threshold to indicate if a brute force attack is occurring.
+
+![Administrator Log](./logs/Administrator_logs.csv)
 
 ### Results
 ////////// **Upload admin logs** //////////
