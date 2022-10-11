@@ -34,7 +34,7 @@ Splunk Processing Language (SPL) is similar to SQL except that Splunk SPL is des
 "Nessus is one of the many vulnerability scanners used during vulnerability assessments and penetration testing engagements, including malicious attacks." (Lester Obbayi, Infosec Institute, 7/26/19) https://resources.infosecinstitute.com/topic/a-brief-introduction-to-the-nessus-vulnerability-scanner/
 
 ## Attack Scenario
-<ins>Assumption</ins>: I am new SOC Analyst for Acme Co., which has Splunk ES as their SIEM.
+<ins>Assumption</ins>: I am new SOC Analyst for Vandalay Co., which has Splunk ES as their SIEM.
 
 The following attacks and challenges are in play:
 - Web server outage due to a DDOS attack
@@ -135,7 +135,7 @@ Use Splunk Processing Language (SPL) to:
 ![CountReport](./images/3-02-CountReport.jpg)
 
 ## Create a <ins>DAILY</ins> Vulnerability Alert Notification For Data Server
-- Create an email alert that monitors every day to see if this server has any critical vulnerabilities. If a vulnerability exists, have an alert emailed to soc@acme.com
+- Create an email alert that monitors every day to see if this server has any critical vulnerabilities. If a vulnerability exists, have an alert emailed to soc@vandalay.com
 
 ### Results
 
@@ -148,7 +148,7 @@ Complete the following fields in the resulting SAVE AS ALERT window and press SA
 - Description: Customer Database Server
 - Alert Type: Run Every Day
 - Trigger Alert When: IS GREATER THAN 0 SELECT Trigger Action/Add
-- Actions: Send EMAIL To: soc@acme.com, Priority: Highest, Include Link, Trigger Time, PDF
+- Actions: Send EMAIL To: soc@vandalay.com, Priority: Highest, Include Link, Trigger Time, PDF
 
 ![CountAlert2](./images/3-04-CountAlert2.jpg)
 ![CountAlert3](./images/3-05-CountAlert3.jpg)
@@ -208,7 +208,7 @@ In the search window, click SAVE AS and select ALERT.  Complete as follows:
 - Alert Type:  Scheduled EVERY HOUR
 - Trigger alert when:  Number of results is Greater than 24
 - Add Action : select SEND EMAIL
-- To: soc@acme.com
+- To: soc@vandalay.com
 - Priority: highest
 - Click SAVE
 - Screenshots as follows:
