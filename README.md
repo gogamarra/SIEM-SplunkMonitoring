@@ -1,5 +1,11 @@
 # SIEM - Design A Splunk Monitoring Solution 
 
+## Project Outline
+- Introduction
+- Attack Scenario
+- List of Project Deliverables
+- Tasks and Results Documentation
+
 ## Introduction
 
 <ins>OBJECTIVE</ins>: Demonstrate my ability to design a powerful Splunk Enterprise Security monitoring solution to protect a customer from security attacks.
@@ -18,12 +24,12 @@
 
 Splunk Enterprise Security (ES) is a Security Information and Event Management (SIEM) tool based on the Splunk data platform, a big data software solution that also provides many solutions outside cybersecurity. Splunk ES specializes in assisting with the key defensive concepts of continuous monitoring, log collection, aggregation, parsing, normalization, searching and correlation. 
 
-Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add to their Splunk base product that have custom searches and features, with their own interface.  These differ from <ins>Splunk Add-ons</ins>, which are smaller components that provide additional functionality without their own interface.
+Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add to their Splunk base product. Apps have custom searches and features with their own interface.  These differ from <ins>Splunk Add-ons</ins>, which are smaller components that provide additional functionality without their own interface.
 
-Splunk Processing Language (SPL) is similar to SQL except that Splunk SPL is designed to search events rather than database table columns. !(https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SQLtoSplunk)
+Splunk Processing Language (SPL) is similar to SQL except that Splunk SPL is designed to search events rather than database table columns. (https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SQLtoSplunk)
 
 ## Attack Scenario
-For the purposes of this project, I presume to be a new SOC Analyst for a company, Vandalay Industries. Vandalay uses Splunk ES as their SIEM.  
+For the purposes of this project, I presume to be a new SOC Analyst for a company, Vandalay Industries, which has Splunk ES as their SIEM.  
 
 The following attacks and challenges are in play:
 - Web server outage due to a DDOS attack
@@ -31,14 +37,14 @@ The following attacks and challenges are in play:
 - Brute force attacks against administrator accounts
 - Management suspects the database servers might be vulnerable and are in need of an assessment.
 
-## Outline of Deliverables
+## List Of Project Deliverables
 - Install SIEM Monitoring Features
 - Monitor Web Servers (ping, packet loss, speed)
-- Analyze and Conclude On "Speed Test" Log Data from DDOS Attack
+- Analyze/Conclude On "Speed Test" Log Data From DDOS Attack
 - Create DDOS Attack Alert Notification
 - Analyze/Conclude On Vulnerability of Data Server
 - Create Vulnerability Alert Notification
-- Analyze/Conclude On "Admin" Log Data For Brute Force Attack
+- Analyze/Conclude On "Admin" Log Data From Brute Force Attack
 - Create Brute Force Attack Alert Notification
  
 ## Install SIEM Monitoring Features
@@ -78,7 +84,7 @@ The following attacks and challenges are in play:
 
 ![SpeedTestWebServer2](./images/1-09-Speed2.jpg)
 
-## Analyze <ins>SPEED TEST</ins> Log From DDOS Attack
+## Analyze/Conclude <ins>SPEED TEST</ins> Log From DDOS Attack
 - Add Speed Test Log Data to SIEM
 Use Splunk Processing Language (SPL) to:
 - Create a virtual field showing ratio of upload:download speed.
