@@ -29,7 +29,7 @@ Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add 
 Splunk Processing Language (SPL) is similar to SQL except that Splunk SPL is designed to search events rather than database table columns. (https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SQLtoSplunk)
 
 ## Attack Scenario
-For the purposes of this project, I presume to be a new SOC Analyst for a company, Vandalay Industries, which has Splunk ES as their SIEM.  
+<ins>Assumption</ins>: I am new SOC Analyst for a company, Vandalay Industries, which has Splunk ES as their SIEM.
 
 The following attacks and challenges are in play:
 - Web server outage due to a DDOS attack
