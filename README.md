@@ -9,15 +9,16 @@
 - Installing new apps
 - Uploading files
 - Splunk searching
+- Splunk Processing Language (SPL)
 - Using fields
 - Custom reports
 - Custom alerts
 
 <ins>What is Splunk ES?</ins>
 
-Splunk Enterprise Security (ES) is a Security Information and Event Management (SIEM) tool based on the Splunk data platform, a big data software solution that also provides many solutions outside cybersecurity. Splunk ES specializes in assisting with the key defensive concepts of continous monitoring, log collection, aggregation, parsing, normalization, searching and correlation. 
+Splunk Enterprise Security (ES) is a Security Information and Event Management (SIEM) tool based on the Splunk data platform, a big data software solution that also provides many solutions outside cybersecurity. Splunk ES specializes in assisting with the key defensive concepts of continuous monitoring, log collection, aggregation, parsing, normalization, searching and correlation. 
 
-Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add to their Splunk base product that have custom searches and features, with their own interface.  These differ from <ins>Splunk Addons</ins>, which are smaller components that provide additional functionality without their own interface.
+Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add to their Splunk base product that have custom searches and features, with their own interface.  These differ from <ins>Splunk Add-ons</ins>, which are smaller components that provide additional functionality without their own interface.
 
 ## Attack Scenario
 For the purposes of this project, I presume to be a new SOC Analyst for a company, Vandalay Industries. Vandalay uses Splunk ES as their SIEM.  
@@ -138,7 +139,6 @@ To: soc@vandalay.com, Priority: Highest, Include Link, Trigger Time, PDF
 ![CountAlert3](./images/3-05-CountAlert3.jpg)
 ![CountAlert4](./images/3-06-CountAlert4.jpg)
 
-
 ## Analyze Administrator Logs For a BRUTE FORCE Attack
 - Analyze administrator logs that document a brute force attack. Then, create a baseline of the ordinary amount of administrator bad logins and determine a threshold to indicate if a brute force attack is occurring.
 
@@ -153,8 +153,8 @@ To: soc@vandalay.com, Priority: Highest, Include Link, Trigger Time, PDF
 
 - ////////**Determine a baseline of normal activity**////////
 
-- The baseline of normal activity is between 0 and 23 events per hour based on the timeframe history of the logged events which is approximately 35 hours.
-- The minimum brute-force activity for this incident was 34 events per hour.  This leaves a gap of 23-33 events that could be either normal activity or malicious in future activity.  A hacker could potentially use rates of events in the gap window to mask themselves from detection.  Given that both future normal and malicious activity could have an unknown statistical deviation +/-, the alert threshold should be set to 28, the midpoint of the gap window.  If we could obtain more historical files to determine what is “normal”, this threshold could be revised.  
+- The baseline of normal activity is between 0 and 23 events per hour based on the timeframe history of the logged events, which is approximately 35 hours.
+- The minimum brute-force activity for this incident was 34 events per hour.  This leaves a gap of 23-33 events that could be either normal activity or malicious in future activity.  A hacker could potentially use “rates of events” in the gap window to mask themselves from detection.  Given that both future normal and malicious activity could have an unknown statistical deviation +/-, the alert threshold should be set to 28, the midpoint of the gap window.  If we could obtain more historical files to determine what is “normal”, the threshold could be revised.  
 
 - ////////**Create and email alert to check threshold hourly**////////
 
@@ -186,6 +186,3 @@ Screenshots as follows:
 ![AlertBrute4](./images/4-06-CreateAlertBrute4.jpg)
 ![AlertBrute5](./images/4-07-CreateAlertBrute5.jpg)
 ![AlertBrute6](./images/4-08-CreateAlertBrute6.jpg)
-
-
-
