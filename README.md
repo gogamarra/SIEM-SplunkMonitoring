@@ -20,7 +20,7 @@ Splunk Enterprise Security (ES) is a Security Information and Event Management (
 
 Splunk solutions can be enhanced by <ins>Splunk Apps</ins>, which users can add to their Splunk base product that have custom searches and features, with their own interface.  These differ from <ins>Splunk Add-ons</ins>, which are smaller components that provide additional functionality without their own interface.
 
-Splunk Processing Language (SPL) is similar to SQL except that Splunk SPL is designed to search events rather than database table columns. ![Splunk SPL for SQL users](https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SQLtoSplunk)
+Splunk Processing Language (SPL) is similar to SQL except that Splunk SPL is designed to search events rather than database table columns. (https://docs.splunk.com/Documentation/Splunk/latest/SearchReference/SQLtoSplunk)
 
 ## Attack Scenario
 For the purposes of this project, I presume to be a new SOC Analyst for a company, Vandalay Industries. Vandalay uses Splunk ES as their SIEM.  
