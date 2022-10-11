@@ -11,7 +11,7 @@ Demonstrate my ability to design a powerful Splunk Enterprise Security SIEM moni
 
 ## Introduction
 <ins>My Skills and Knowledge Applied</ins> 
-- Searching for Splunk apps
+- Finding Splunk apps
 - Installing a Splunk app
 - Uploading log files
 - Splunk searching of log data
@@ -34,7 +34,7 @@ Splunk Processing Language (SPL) is similar to SQL except that Splunk SPL is des
 "Nessus is one of the many vulnerability scanners used during vulnerability assessments and penetration testing engagements, including malicious attacks." (Lester Obbayi, Infosec Institute, 7/26/19) https://resources.infosecinstitute.com/topic/a-brief-introduction-to-the-nessus-vulnerability-scanner/
 
 ## Attack Scenario
-<ins>Assumption</ins>: I am new SOC Analyst for a company, Vandalay Industries, which has Splunk ES as their SIEM.
+<ins>Assumption</ins>: I am new SOC Analyst for Acme Co., which has Splunk ES as their SIEM.
 
 The following attacks and challenges are in play:
 - Web server outage due to a DDOS attack
@@ -96,7 +96,7 @@ Use Splunk Processing Language (SPL) to:
 - Create a Splunk report showing statistics for: time, ip_address, downloaded megabits, uploaded megabits, upload/download ratio.
 - Conclude: 1) approximate date/time of attack, 2) How long did it take systems to recover?
 
-![Server Speed Test Log](./logs/server_speedtest.csv)
+![Server Speed Test Log](./logs/)
 
 ### Results
 ////////// **Upload Log Data** //////////
@@ -122,7 +122,7 @@ Use Splunk Processing Language (SPL) to:
 - Upload Nessus Scan Results
 - Create a Splunk report to determine how many critical vulnerabilities exist on the customer data server
 
-![Nessus Log](./logs/nessus_logs.csv)
+![Nessus Log](./logs/)
 
 ### Results
 
@@ -134,12 +134,12 @@ Use Splunk Processing Language (SPL) to:
 
 ![CountReport](./images/3-02-CountReport.jpg)
 
-## Create Vulnerability Alert Notification For Data Server
-- Create an email alert that monitors every day to see if this server has any critical vulnerabilities. If a vulnerability exists, have an alert emailed to soc@vandalay.com
+## Create a <ins>DAILY</ins> Vulnerability Alert Notification For Data Server
+- Create an email alert that monitors every day to see if this server has any critical vulnerabilities. If a vulnerability exists, have an alert emailed to soc@acme.com
 
 ### Results
 
-////////// **Create and email alert for the data server** //////////
+////////// **Create a daily email alert for the data server** //////////
 
 ![CountAlert1](./images/3-03-CountAlert1.jpg)
 
@@ -157,7 +157,7 @@ Complete the following fields in the resulting SAVE AS ALERT window and press SA
 ## Analyze/Conclude On <ins>Admin</ins> Log Data From Brute Force Attack
 - Analyze administrator logs that document a brute force attack. Then, create a baseline of the ordinary amount of administrator bad logins and determine a threshold to indicate if a brute force attack is occurring.
 
-![Administrator Log](./logs/Administrator_logs.csv)
+![Administrator Log](./logs/)
 
 ### Results
 ////////// **Upload admin logs** //////////
@@ -170,9 +170,13 @@ Complete the following fields in the resulting SAVE AS ALERT window and press SA
 
 ////////// **Determine a baseline of normal activity** //////////
 
-The baseline of normal activity is between 0 and 23 events per hour based on the timeframe history of the logged events, which is approximately 35 hours.
+The <ins>baseline of normal activity</ins> is **between 0 and 23 events per hour** based on the timeframe history of the logged events, which is approximately 35 hours.
 
-The minimum brute-force activity for this incident was 34 events per hour.  This leaves a gap of 23-33 events that could be either normal activity or malicious in future activity.  A hacker could potentially use “rates of events” in the gap window to mask themselves from detection.  Given that both future normal and malicious activity could have an unknown statistical deviation +/-, the alert threshold should be set to 28, the midpoint of the gap window.  If we could obtain more historical files to determine what is “normal”, the threshold could be revised.  
+<ins>Brute-force activity</ins> for this incident is considered **34 events or MORE per hour**.  
+
+This leaves a <ins>middle range of 23-33 events</ins> that could be **either normal activity or malicious in future activity.**  A hacker could potentially use “rates of events” within the gap window to mask themselves from detection.  
+
+<ins>Recommendation</ins>: Given that both future normal and malicious activity could have an unknown statistical deviation +/-, the alert threshold should be set initially to 28 events per hour, the midpoint of the mid-range window.  If we could obtain more historical files to determine what is “normal”, the threshold could be revised.  
 
 ////////// **Create Brute Force Attack Alert Notification** //////////
 
