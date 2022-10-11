@@ -61,7 +61,7 @@ The following attacks and challenges are in play:
 - Run a current speed test
 
 ### Results
-- //////// **Confirm web servers availability by pinging 198.153.194.1 and *198.153.194.2** //////// 
+- //////// **Confirm web servers availability by pinging 198.153.194.1 and 198.153.194.2** //////// 
 
 ![PingWebServer1](./images/1-06-Ping1.jpg)
 ![PingWebServer2](./images/1-07-Ping2.jpg)
