@@ -96,7 +96,7 @@ Use Splunk Processing Language (SPL) to:
 - Create a Splunk report showing statistics for: time, ip_address, downloaded megabits, uploaded megabits, upload/download ratio.
 - Conclude: 1) approximate date/time of attack, 2) How long did it take systems to recover?
 
-![Server Speed Test Log](./logs/)
+![Server Speed Test Log](./logs/server_speedtest.csv)
 
 ### Results
 ////////// **Upload Log Data** //////////
