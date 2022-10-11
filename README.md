@@ -184,7 +184,8 @@ Based on the following print screens, enter search SPL as follows with earliest=
 
 ![AlertBrute3](./images/4-05-CreateAlertBrute3.jpg)
  
-- Configuring an Hourly Alert in Splunk
+////////// **Productionalize an Hourly Alert in Splunk** //////////
+
 In the search window, click SAVE AS and select ALERT.  Complete as follows:
 
 - Title:  Hourly Attack Check
