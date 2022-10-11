@@ -148,7 +148,7 @@ Complete the following fields in the resulting SAVE AS ALERT window and press SA
 - Description: Customer Database Server
 - Alert Type: Run Every Day
 - Trigger Alert When: IS GREATER THAN 0 SELECT Trigger Action/Add
-- Actions: Send EMAIL To: soc@vandalay.com, Priority: Highest, Include Link, Trigger Time, PDF
+- Actions: Send EMAIL To: soc@acme.com, Priority: Highest, Include Link, Trigger Time, PDF
 
 ![CountAlert2](./images/3-04-CountAlert2.jpg)
 ![CountAlert3](./images/3-05-CountAlert3.jpg)
@@ -208,7 +208,7 @@ In the search window, click SAVE AS and select ALERT.  Complete as follows:
 - Alert Type:  Scheduled EVERY HOUR
 - Trigger alert when:  Number of results is Greater than 24
 - Add Action : select SEND EMAIL
-- To: soc@vandalay.com
+- To: soc@acme.com
 - Priority: highest
 - Click SAVE
 - Screenshots as follows:
